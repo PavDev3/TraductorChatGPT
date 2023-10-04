@@ -1,4 +1,5 @@
-import { type Action, type State } from '../types'
+import { AUTO_LANGUAGE } from '../constants'
+import { type Language, type Action, type State, type FromLanguage } from '../types'
 import { useReducer } from 'react'
 
 // 1. Creamos el estado inicial
@@ -15,6 +16,7 @@ function reducer (state: State, action: Action) {
   const { type, payload } = action
 
   if (type === 'INTERCHANGE_LANGUAGES') {
+    if (state.fromLanguage === AUTO_LANGUAGE) return state
     return {
       ...state,
       fromLanguage: state.toLanguage,
@@ -68,14 +70,15 @@ export function useStore () {
     }, dispatch] = useReducer(reducer, initialState)
 
   // 4. Creamos las funciones que modifican el estado
+  // Dispatch = Ordenar una acción y dar un contenido
   const interchangeLanguages = () => {
     dispatch({ type: 'INTERCHANGE_LANGUAGES' })
   }
-  const setFromLanguage = (payload: string) => {
+  const setFromLanguage = (payload: FromLanguage) => {
     dispatch({ type: 'SET_FROM_LANGUAGE', payload })
   }
 
-  const setToLanguage = (payload: string) => {
+  const setToLanguage = (payload: Language) => {
     dispatch({ type: 'SET_TO_LANGUAGE', payload })
   }
 
