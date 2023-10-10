@@ -18,7 +18,9 @@ function App () {
     setFromLanguage,
     setToLanguage,
     setFromText,
-    setResult
+    setToResult,
+    loading
+
   } = useStore()
   return (
     <Container fluid>
@@ -32,7 +34,6 @@ function App () {
               onChange={setFromLanguage}
             />
             <TextArea
-              placeholder='Original text'
               type={SectionType.From}
               value={fromText}
               onChange={setFromText}
@@ -53,10 +54,10 @@ function App () {
             value={toLanguage}
             onChange={setToLanguage} />
             <TextArea
-              placeholder='Translation'
+             loading={loading}
               type={SectionType.To}
               value={result}
-              onChange={setResult}
+              onChange={setToResult}
             />
           </Stack>
         </Col>
