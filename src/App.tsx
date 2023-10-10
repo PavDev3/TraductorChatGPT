@@ -20,7 +20,7 @@ function App () {
     setFromLanguage,
     setToLanguage,
     setFromText,
-    setToResult,
+    setResult,
     loading
 
   } = useStore()
@@ -30,10 +30,10 @@ function App () {
 
     translate({ fromLanguage, toLanguage, text: fromText })
       .then(result => {
-        if (result === null) return
-        setToResult(result)
+        if (result == null) return
+        setResult(result)
       })
-      .catch(() => { setToResult('Error') })
+      .catch(() => { setResult('Error') })
   }, [fromText])
 
   return (
@@ -71,7 +71,7 @@ function App () {
              loading={loading}
               type={SectionType.To}
               value={result}
-              onChange={setToResult}
+              onChange={setResult}
             />
           </Stack>
         </Col>

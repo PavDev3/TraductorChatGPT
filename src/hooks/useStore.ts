@@ -86,7 +86,7 @@ export function useStore () {
     dispatch({ type: 'SET_FROM_TEXT', payload })
   }
 
-  const setToResult = (payload: string) => {
+  const setResult = (payload: string) => {
     dispatch({ type: 'SET_RESULT', payload })
   }
 
@@ -101,6 +101,6 @@ export function useStore () {
     setFromLanguage,
     setToLanguage,
     setFromText,
-    setToResult
+    setResult
   }
 }
