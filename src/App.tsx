@@ -2,7 +2,6 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import { useEffect } from 'react'
 import { useDebounce } from './hooks/useDebounce'
 import { Container, Row, Col, Button, Stack } from 'react-bootstrap'
-
 import './App.css'
 import { ArrowsIcon, ClipboardIcon, SpeakerIcon } from './components/Icons'
 import { LanguageSelector } from './components/LanguageSelector'
@@ -52,7 +51,7 @@ function App () {
 
   return (
     <Container fluid>
-      <h2>Google Translate</h2>
+      <h2>Google Translate with ChatGPT</h2>
 
       <Row>
         <Col>
