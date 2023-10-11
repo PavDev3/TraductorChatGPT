@@ -3,22 +3,21 @@ import { SectionType } from '../types.d'
 
 interface Props {
   type: SectionType
-  autofocus?: boolean
   loading?: boolean
   onChange: (value: string) => void
   value: string
 }
 
-const commonStyles = { border: '0px', height: '200px', resize: 'none' }
+const commonStyles = { border: 0, height: '200px' }
 
 const getPlaceholder = ({ type, loading }: { type: SectionType, loading?: boolean }) => {
-  if (type === SectionType.From) return 'Introduce el texto a traducir'
-  if (loading === true) return 'Traduciendo...'
+  if (type === SectionType.From) return 'Introducir texto'
+  if (loading === true) return 'Cargando...'
   return 'Traducción'
 }
 
-export const TextArea = ({ type, loading, onChange, value }: Props) => {
-  const style = type === SectionType.From
+export const TextArea = ({ type, loading, value, onChange }: Props) => {
+  const styles = type === SectionType.From
     ? commonStyles
     : { ...commonStyles, backgroundColor: '#f5f5f5' }
 
@@ -27,14 +26,14 @@ export const TextArea = ({ type, loading, onChange, value }: Props) => {
   }
 
   return (
-        <Form.Control
-        autoFocus={type === SectionType.From}
-        as='textarea'
-        disabled={type === SectionType.To}
-        placeholder={getPlaceholder({ type, loading })}
-        style={style}
-        value={value}
-        onChange={handleChange}
-        />
+    <Form.Control
+      autoFocus={type === SectionType.From}
+      as='textarea'
+      disabled={type === SectionType.To}
+      placeholder={getPlaceholder({ type, loading })}
+      style={styles}
+      value={value}
+      onChange={handleChange}
+    />
   )
 }
