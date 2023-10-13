@@ -1,7 +1,10 @@
 export const SUPPORTED_LANGUAGES = {
   en: 'English',
   es: 'Español',
-  de: 'Deutsch'
+  de: 'Deutsch',
+  fr: 'French',
+  fi: 'Finnish'
+
 }
 
 export const VOICE_FOR_LANGUAGE = {
