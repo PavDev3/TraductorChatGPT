@@ -14,7 +14,7 @@ FROM nginx AS prod
 
 WORKDIR /usr/share/nginx/html
 
-COPY --from=build /app/build .
+COPY --from=build /app/dist .
 
 EXPOSE 80
 
