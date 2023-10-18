@@ -1,27 +1,40 @@
-# React + TypeScript + Vite
+# 📌 Overview
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+TraductorChatGPT is a project that utilizes essential dependencies like bootstrap, openai, react, react-bootstrap, react-dom, and typescript-eslint to create a chat application powered by OpenAI's GPT model.
 
-Currently, two official plugins are available:
+## ⚙️ Setting Up
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+#### Your Environment Variable
 
-## Expanding the ESLint configuration
+- Step 1:
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+Need a ApiKey from OpenAI. 
 
-- Configure the top-level `parserOptions` property like this:
 
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
+
+## 🚀 Run Locally
+1.Clone the TraductorChatGPT repository:
+```sh
+git clone https://github.com/PavDev3/TraductorChatGPT
+```
+2.Install the dependencies with one of the package managers listed below:
+```bash
+pnpm install
+bun install
+npm install
+yarn install
+```
+3.Start the development mode:
+```bash
+pnpm dev
+bun dev
+npm run dev
+yarn dev
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+## ☁️ Deploy
+
+`[Traductor con ChatGPT](Your App URL)`
+
+
+
